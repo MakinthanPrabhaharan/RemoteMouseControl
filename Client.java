@@ -9,6 +9,8 @@ import java.util.Scanner;
 import javax.swing.JOptionPane;
 
 public class Client {
+	
+	String ipAddress = "";
 
 	public static void main(String args[]){
 		
@@ -17,7 +19,7 @@ public class Client {
 			JOptionPane.showMessageDialog(null, "CONNECTING TO SERVER");
 			
 			//initializing connection to server (controlling computer)
-			Socket socket = new Socket("192.168.0.19", 6675);
+			Socket socket = new Socket(ipAddress, 6675);
 			
 			Scanner listener = new Scanner(socket.getInputStream());
 			
